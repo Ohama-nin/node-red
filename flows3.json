@@ -1,0 +1,410 @@
+[
+    {
+        "id": "d37eec2b943ba3e4",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5fff00d5f4b24296",
+        "type": "ui_button",
+        "z": "d37eec2b943ba3e4",
+        "name": "Facebook",
+        "group": "f26e784b33b8deea",
+        "order": 6,
+        "width": 5,
+        "height": 3,
+        "passthru": false,
+        "label": "<font size =5><i class=\"fa-5x  fa fa-facebook-official\" aria-hidden=\"true\"></i></font>",
+        "tooltip": "",
+        "color": "orange",
+        "bgcolor": "white",
+        "className": "Facebook",
+        "icon": "",
+        "payload": "Krittapat Pongpanyanate",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 320,
+        "y": 460,
+        "wires": [
+            [
+                "2f6c4b21826b3436"
+            ]
+        ]
+    },
+    {
+        "id": "1fad38be7d33127f",
+        "type": "ui_template",
+        "z": "d37eec2b943ba3e4",
+        "group": "f26e784b33b8deea",
+        "name": "",
+        "order": 15,
+        "width": 5,
+        "height": 3,
+        "format": "<style>\n        .text\n        {border-radius: 10px !important ;\n        box-shadow: 5px 5px 10px 5px rgba(50,50,50,.4);\n        border-left: 15px solid orange !important ;\n        }\n        .Facebook,.Clear\n        {border-radius: 10px !important ;\n        box-shadow: 5px 5px 10px 5px rgba(50,50,50,.4);\n        border-left: 15px solid orange !important ;\n        }\n        .md-raised\n        {\n        border-radius: 10px;\n        }\n        .fa-facebook-official{\n        font-size: 5;\n        }\n       \n</style>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "global",
+        "className": "",
+        "x": 320,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "53d3e6a6bff0d219",
+        "type": "ui_button",
+        "z": "d37eec2b943ba3e4",
+        "name": "Clear",
+        "group": "f26e784b33b8deea",
+        "order": 11,
+        "width": 5,
+        "height": 3,
+        "passthru": false,
+        "label": "<font size =5><i class=\"fa-5x fa fa-bitbucket\" aria-hidden=\"true\"></i></font>",
+        "tooltip": "",
+        "color": "orange",
+        "bgcolor": "white",
+        "className": "Clear",
+        "icon": "",
+        "payload": " ",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 310,
+        "y": 520,
+        "wires": [
+            [
+                "2f6c4b21826b3436"
+            ]
+        ]
+    },
+    {
+        "id": "2f6c4b21826b3436",
+        "type": "ui_text",
+        "z": "d37eec2b943ba3e4",
+        "group": "f26e784b33b8deea",
+        "order": 7,
+        "width": 5,
+        "height": 1,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "text",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 530,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "3b907545ca2ec549",
+        "type": "ui_button",
+        "z": "d37eec2b943ba3e4",
+        "name": "Facebook",
+        "group": "f26e784b33b8deea",
+        "order": 1,
+        "width": 5,
+        "height": 3,
+        "passthru": false,
+        "label": "<font size =5><i class=\"fa-5x  fa fa-facebook-official\" aria-hidden=\"true\"></i></font>",
+        "tooltip": "",
+        "color": "orange",
+        "bgcolor": "white",
+        "className": "Facebook",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 320,
+        "y": 360,
+        "wires": [
+            [
+                "6d140baa87c609c3"
+            ]
+        ]
+    },
+    {
+        "id": "53cf8426fc972475",
+        "type": "ui_text",
+        "z": "d37eec2b943ba3e4",
+        "group": "f26e784b33b8deea",
+        "order": 2,
+        "width": 5,
+        "height": 1,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "text",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 810,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "6d140baa87c609c3",
+        "type": "function",
+        "z": "d37eec2b943ba3e4",
+        "name": "function 13",
+        "func": "var a = msg.payload;\nvar total = flow.get(\"total\")\ntotal = total+a;\nif (total % 2 === 0) {\n    msg.payload = ' ';\n} else if (total % 2 === 1) {\n    msg.payload = 'Krittapat Pongpanyanate';\n}\n\nflow.set(\"total\",total)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "flow.set(\"total\", 0)\n",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 320,
+        "wires": [
+            [
+                "53cf8426fc972475",
+                "9797fc7e64e55e4b"
+            ]
+        ]
+    },
+    {
+        "id": "84d8da5ae8a7a358",
+        "type": "inject",
+        "z": "d37eec2b943ba3e4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 310,
+        "y": 300,
+        "wires": [
+            [
+                "6d140baa87c609c3"
+            ]
+        ]
+    },
+    {
+        "id": "9797fc7e64e55e4b",
+        "type": "debug",
+        "z": "d37eec2b943ba3e4",
+        "name": "debug 38",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "55f88f73c2311ddb",
+        "type": "inject",
+        "z": "d37eec2b943ba3e4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "88a369622d5a66c5"
+            ]
+        ]
+    },
+    {
+        "id": "88a369622d5a66c5",
+        "type": "function",
+        "z": "d37eec2b943ba3e4",
+        "name": "function 14",
+        "func": "flow.set(\"total\",0)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5323c07f7913dd0b",
+        "type": "ui_spacer",
+        "z": "d37eec2b943ba3e4",
+        "name": "spacer",
+        "group": "f26e784b33b8deea",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f5d8c3d77c7ee6e2",
+        "type": "ui_spacer",
+        "z": "d37eec2b943ba3e4",
+        "name": "spacer",
+        "group": "f26e784b33b8deea",
+        "order": 4,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "51e1f9f8f6e86a41",
+        "type": "ui_spacer",
+        "z": "d37eec2b943ba3e4",
+        "name": "spacer",
+        "group": "f26e784b33b8deea",
+        "order": 5,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "5fec87b0ab810224",
+        "type": "ui_spacer",
+        "z": "d37eec2b943ba3e4",
+        "name": "spacer",
+        "group": "f26e784b33b8deea",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "31733c046155d891",
+        "type": "ui_spacer",
+        "z": "d37eec2b943ba3e4",
+        "name": "spacer",
+        "group": "f26e784b33b8deea",
+        "order": 9,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "6f650f4973f739d7",
+        "type": "ui_spacer",
+        "z": "d37eec2b943ba3e4",
+        "name": "spacer",
+        "group": "f26e784b33b8deea",
+        "order": 10,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "7bd44e666a10de34",
+        "type": "ui_spacer",
+        "z": "d37eec2b943ba3e4",
+        "name": "spacer",
+        "group": "f26e784b33b8deea",
+        "order": 12,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "4d584ecef15fbb6c",
+        "type": "ui_spacer",
+        "z": "d37eec2b943ba3e4",
+        "name": "spacer",
+        "group": "f26e784b33b8deea",
+        "order": 13,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "c876783fa2fac695",
+        "type": "ui_spacer",
+        "z": "d37eec2b943ba3e4",
+        "name": "spacer",
+        "group": "f26e784b33b8deea",
+        "order": 14,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "c17dee6d4d30569f",
+        "type": "ui_spacer",
+        "z": "d37eec2b943ba3e4",
+        "name": "spacer",
+        "group": "f26e784b33b8deea",
+        "order": 16,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "63eca17225cbb4fd",
+        "type": "ui_spacer",
+        "z": "d37eec2b943ba3e4",
+        "name": "spacer",
+        "group": "f26e784b33b8deea",
+        "order": 17,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "8b3b03a1351b5014",
+        "type": "ui_spacer",
+        "z": "d37eec2b943ba3e4",
+        "name": "spacer",
+        "group": "f26e784b33b8deea",
+        "order": 18,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "f26e784b33b8deea",
+        "type": "ui_group",
+        "name": "Test1",
+        "tab": "1bb37ecee366a692",
+        "order": 2,
+        "disp": true,
+        "width": 11,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1bb37ecee366a692",
+        "type": "ui_tab",
+        "name": "Test1",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
